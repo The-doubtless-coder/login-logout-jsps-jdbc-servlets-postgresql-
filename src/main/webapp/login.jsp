@@ -28,6 +28,7 @@
 						</figure>
 						<a href="registration.jsp" class="signup-image-link">Create an
 							account</a>
+<%--						<a href="forgotPasword.jsp" class="signup-image-link">Forgot Password?</a>--%>
 					</div>
 
 					<div class="signin-form">
@@ -46,10 +47,7 @@
 									placeholder="Password" required/>
 							</div>
 							<div class="form-group">
-								<input type="checkbox" name="remember-me" id="remember-me"
-									class="agree-term" /> <label for="remember-me"
-									class="label-agree-term"><span><span></span></span>Remember
-									me</label>
+							<a href="forgotPassword.jsp">Forgot Password?</a>
 							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
@@ -80,7 +78,7 @@
 <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
 <script type="text/javascript">
-	var status = document.getElementById("status").value;
+	const status = document.getElementById("status").value;
 	if(status==="psql"){
 		swal({
 			title: "Failed",
@@ -102,6 +100,10 @@
 	}else if(status==="emptypass") {
 		swal({
 			title: "failed", text: "Please enter your password", type: "error", ConfirmButtonText: "Ok"
+		})
+	}else if(status==="change_success"){
+		swal({
+			title: "Success", text: "Password successfully changed", type: "success", ConfirmButtonText: "Ok"
 		})
 	}
 </script>

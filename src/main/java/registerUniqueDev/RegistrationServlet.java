@@ -4,13 +4,12 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.postgresql.util.PSQLException;
+import registerUniqueDev.utilities.ByCryptPasswordHashing;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @WebServlet(name = "RegistrationServlet", value = "/registerurl")
@@ -99,11 +98,13 @@ public class RegistrationServlet extends HttpServlet {
                 }
                 System.out.println(rs);
             }
-            rd = request.getRequestDispatcher("registration.jsp");
+
             if (rowCount > 0) {
                 request.setAttribute("status", "succeeded");
+                rd = request.getRequestDispatcher("login.jsp");
             } else {
                 request.setAttribute("status", "failed");
+                rd = request.getRequestDispatcher("registration.jsp");
             }
             rd.forward(request, response);
         } catch (Exception e) {

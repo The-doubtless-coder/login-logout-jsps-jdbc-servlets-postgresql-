@@ -1,4 +1,4 @@
-package registerUniqueDev;
+package registerUniqueDev.utilities;
 
 
 import java.io.UnsupportedEncodingException;

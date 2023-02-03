@@ -1,4 +1,6 @@
-package registerUniqueDev;
+package registerUniqueDev.utilities;
+
+import registerUniqueDev.utilities.BCrypt;
 
 /**
  * Author: Ian Gallagher <igallagher@securityinnovation.com>

@@ -3,6 +3,7 @@ package registerUniqueDev;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+import registerUniqueDev.utilities.ByCryptPasswordHashing;
 
 import java.io.IOException;
 import java.io.PrintWriter;
